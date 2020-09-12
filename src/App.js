@@ -23,6 +23,12 @@ function App() {
     setTodos(newTodos);
   };
 
+  const unCompleteTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].isCompleted = false;
+    setTodos(newTodos);
+  };
+
   const removeTodo = (index) => {
     const newTodos = [...todos];
     newTodos.splice(index, 1);
@@ -40,6 +46,7 @@ function App() {
             key={index}
             index={index}
             completeTodo={completeTodo}
+            unCompleteTodo={unCompleteTodo}
             removeTodo={removeTodo}
           />
         ))}
